@@ -28,8 +28,6 @@ const exportObj = {
     }
 };
 
-window.LazyLoad = exportObj;
-
 module.exports = exportObj;
 
 function fInit(){

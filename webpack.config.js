@@ -1,4 +1,5 @@
 const path = require('path');
+const package = require("./package.json");
 const webpack = require('webpack');
 
 const ROOT_PATH = path.resolve(__dirname);
@@ -11,13 +12,18 @@ module.exports = {
     entry: SRC_PATH + '/' + SRC_NAME,
     output: {
         path: DIST_PATH,
-        filename: DIST_NAME
+        filename: package.name + '-' + package.version + '.js'
     },
     module: {
         loaders: [{
             test: /\.js$/,
             exclude: /node_modules/,
-            loader: 'babel'
+            loader: 'babel',
+            query: {
+                cacheDirectory: true,
+                presets: ['es2015'],
+                plugins: ['transform-remove-strict-mode']
+            }
         }]
     },
     plugins:[

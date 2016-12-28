@@ -1,12 +1,4 @@
-/******/ 
-(function(win, name, factory){
-	if (typeof define == 'function' && define.amd) {
-        define(factory);
-    } else {
-        win[name] = factory();
-    }
-})(window, 'LazyLoad', function(){
-	return (function(modules) { // webpackBootstrap
+/******/ (function(modules) { // webpackBootstrap
 /******/ 	// The module cache
 /******/ 	var installedModules = {};
 
@@ -52,16 +44,16 @@
 /* 0 */
 /***/ function(module, exports, __webpack_require__) {
 
-	const Utils = __webpack_require__(1);
+	var Utils = __webpack_require__(1);
 
-	const WINDOW_WIDTH = document.documentElement.clientWidth || document.body.clientWidth;
-	const WINDOW_HEIGHT = document.documentElement.clientHeight || document.body.clientHeight;
-	const SCROLL_WIDTH = document.body.scrollWidth;
-	const SCROLL_HEIGHT = document.body.scrollHeight;
-	const SCROLL_TOP = window.pageYOffset || document.body.scrollTop;
-	const oImgs = document.getElementsByTagName('img');
-	const aImg = Array.prototype.slice.call(oImgs);
-	const LazyLoad = {
+	var WINDOW_WIDTH = document.documentElement.clientWidth || document.body.clientWidth;
+	var WINDOW_HEIGHT = document.documentElement.clientHeight || document.body.clientHeight;
+	var SCROLL_WIDTH = document.body.scrollWidth;
+	var SCROLL_HEIGHT = document.body.scrollHeight;
+	var SCROLL_TOP = window.pageYOffset || document.body.scrollTop;
+	var oImgs = document.getElementsByTagName('img');
+	var aImg = Array.prototype.slice.call(oImgs);
+	var LazyLoad = {
 	    VER: '0.0.1',
 	    ORIGINAL_SRC: 'data-src',
 	    SRC: 'src',
@@ -72,12 +64,12 @@
 
 	    init: fInit
 	};
-	const exportObj = {
+	var exportObj = {
 	    ver: LazyLoad.VER,
-	    start: function () {
+	    start: function start() {
 	        LazyLoad.start.apply(LazyLoad, arguments);
 	    },
-	    destroy: function () {}
+	    destroy: function destroy() {}
 	};
 
 	module.exports = exportObj;
@@ -92,9 +84,9 @@
 /* 1 */
 /***/ function(module, exports, __webpack_require__) {
 
-	const DomEvents = __webpack_require__(2);
+	var DomEvents = __webpack_require__(2);
 
-	const Utils = { createNode, addEvent, removeEvent, toArray, each, addClass, removeClass, delay, stopDelay };
+	var Utils = { createNode: createNode, addEvent: addEvent, removeEvent: removeEvent, toArray: toArray, each: each, addClass: addClass, removeClass: removeClass, delay: delay, stopDelay: stopDelay };
 
 	module.exports = Utils;
 
@@ -210,4 +202,3 @@
 
 /***/ }
 /******/ ]);
-});
